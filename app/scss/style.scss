@@ -244,6 +244,11 @@ html{
 .card-form__wrapper {
   padding-top: 91px;
 }
+@media screen and (min-width: 1440px) {
+  .card-form__wrapper {
+    padding-top: 0px;
+}
+}
 .label {
   display: block;
   margin-top: 20px;
