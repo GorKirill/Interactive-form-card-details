@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card details</title>
+  <link rel="stylesheet" href="css/style.min.css">
+</head>
+<body class="body">
+  <section class="card-image">
+    <div class="card-back">
+      <div class="card-back__magnetic_stripe">
+      </div>
+      <div class="card-back__cvc-line">
+        <span class="card-back__cvc">000</span>
+      </div>
+      <div class="card-back__text-line">
+        <img src="img/dotted-line.svg" alt="text-line">
+      </div>
+    </div>
+    <div class="card-front">
+      <div class="card-front__item-circles">
+        <div class="card-front__circle-big"></div>
+        <div class="card-front__circle-small"></div>
+      </div>
+      <div class="card-front__item-card-number">
+        <span class="card-front__card-number">0000 0000 0000 0000</span>
+      </div>
+      <div class="card-front__item-others-data">
+        <div class="card-front__name">
+          <span class="card-front__name-text">name surname</span>
+        </div>
+        <div class="card-front__date">
+          <span class="card-front__month">00</span>
+          <span class="card-front__delimiter">/</span>
+          <span class="card-front__year">00</span>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="card-form">
+    <div class="card-form__wrapper">
+      <form class="card-form__inner" action="#" name="card_details" novalidate>
+        <div class="cardholder_name">
+          <label class="label" for="cardholder_name">cardholder name</label>
+          <input class="input width-327-381" type="text" maxlength="30" id="cardholder_name" name="cardholder_name" placeholder="name surname" autocomplete="off">
+          <div class="error-inner width-327-381">
+            <span class="error-cardholder_name"></span>
+          </div>
+        </div>
+        <div class="card_number">
+          <label class="label" for="card_number">card number</label>
+          <input class="input width-327-381" type="number" step="1" id="card_number" name="card_number" placeholder="1234 5678 9123 0000" autocomplete="off">
+          <div class="error-inner width-327-381">
+            <span class="error-card_number"></span>
+          </div>
+        </div>
+        <div class="others">
+          <div class="others__month">
+            <label class="label" for="card_month">month</label>
+            <input class="input width-72-80" type="number" min="1" max="12" step="1" id="card_month" name="card_month" placeholder="MM" autocomplete="off">
+            <div class="error-inner width-72-80">
+              <span class="error-card_month"></span>
+            </div>
+          </div>
+          <div class="others__year">
+            <label class="label" for="card_year">year</label>
+            <input class="input width-72-80" type="number" min="10" max="35" step="1" id="card_year" name="card_year" placeholder="YY" autocomplete="off">
+            <div class="error-inner width-72-80">
+              <span class="error-card_year"></span>
+            </div>
+          </div>
+          <div class="others__cvc">
+            <label class="label" for="card_cvc">cvc</label>
+            <input class="input width-164-191" type="number" min="100" max="999" step="1" id="card_cvc" name="card_cvc" placeholder="123" autocomplete="off">
+            <div class="error-inner width-164-191">
+              <span class="error-card_cvc"></span>
+            </div>
+          </div>
+        </div>
+        <div class="btn-confirm">
+          <input type="button" class="btn width-327-381" id="btn-confirm" name="btn_confirm" value="Confirm">
+        </div>
+      </form>
+      <div class="success">
+        <div class="success-img">
+          <img class="success-image" src="./img/path.svg" alt="Ok!">
+        </div>
+        <div class="success-message">
+          <span class="success__gratitude">Thank you!</span>
+          <span class="success__details">We've added our card details</span>
+        </div>
+        <div class="btn width-327-381">
+          <a href="https://github.com/GorKirill">Continue</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <script src="js/main.min.js"></script>
+</body>
+</html>

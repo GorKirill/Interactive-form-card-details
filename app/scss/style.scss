@@ -1,0 +1,414 @@
+@import "fonts.scss";
+$violet: #21092F;
+$white: #FFFFFF;
+$black: #000000;
+$grey: #ADB5BE;
+$gradient: linear-gradient(#6348FE, #610595);
+$font: 'Space Grotesk', sans-serif;
+%background-style {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+html{
+  box-sizing: border-box;
+  input::-webkit-outer-spin-button,
+  input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+  }
+}
+*, *::before, *::after{
+  box-sizing: inherit;
+}
+.body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: $font;
+}
+@media screen and (min-width: 1440px){
+  .body {
+    flex-direction: row;
+    align-items:flex-start;
+    width: 100vw;
+    height: 100vh;
+    min-height: 900px;
+  }
+}
+
+//section card-image
+
+.card-image {
+  @extend %background-style;
+  background-image: url('../img/background_small.svg');
+  display: flex;
+  justify-content: center;
+  position: relative;
+  width: 100vw;
+  height: 240px;
+}
+@media screen and (min-width: 1440px) {
+  .card-image {
+    background-image: url('../img/background.svg');
+    width: 483px;
+    height: 100vh;
+    min-height: 900px;
+  }
+}
+.card-back {
+  @extend %background-style;
+  background-image: url('../img/card_back_small.svg');
+  width: 286px;
+  height: 157px;
+  border-radius: 8px;
+  margin-top: 32px;
+  margin-left: 58px;
+  padding-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  &__magnetic_stripe {
+    background-color: $black;
+    width: 286px;
+    height: 35px;
+  }
+  &__cvc-line {
+    background-color: $grey;
+    width: 230px;
+    height: 30px;
+    border-radius: 3px;
+    margin-top: 15px;
+    padding-right: 9px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    color: $white;
+    font-size: 9px;
+    line-height: 11px;
+    letter-spacing: 1.3px;
+  }
+  &__text-line {
+    @extend %background-style;
+    background-image: url('../img/dotted-line.svg');
+    width: 186px;
+    height: 26px;
+    margin-top: 15px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .card-back {
+    background-image: url('../img/card_back.svg');
+    width: 447px;
+    height: 245px;
+    margin-top: 0;
+    margin-left: 0;
+    padding-top: 23px;
+    position: absolute;
+    top: 48%;
+    left: 258px;
+    box-shadow: 20px 0px 35px -25px $grey;
+    &__magnetic_stripe {
+      width: 447px;
+      height: 54px;
+    }
+    &__cvc-line {
+      width: 361px;
+      height: 38px;
+      margin-top: 24px;
+      font-size: 14px;
+      line-height: 18px;
+      letter-spacing: 2px;
+    }
+    &__text-line {
+      margin-top: 33px;
+    }
+  }
+}
+.card-front {
+  @extend %background-style;
+  background-image: url('../img/card_front_small.svg');
+  width: 286px;
+  height: 157px;
+  border-radius: 8px;
+  position: absolute;
+  z-index: 1;
+  top: 126px;
+  left: 50%;
+  transform: translateX(-59.8%);
+  display: flex;
+  flex-direction: column;
+  padding-top: 17.5px;
+  padding-left: 19px;
+  box-shadow: 0px 30px 50px -30px $grey;
+  &__item-circles{
+    display: flex;
+    align-items: center;
+  }
+  &__circle-big {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: $white;
+  }
+  &__circle-small {
+    margin-left: 11px;
+    width: 13.5px;
+    height: 13.5px;
+    border: 1px solid $white;
+    border-radius: 50%;
+  }
+  &__item-card-number {
+    margin-top: 38px;
+    color: $white;
+    font-size: 18px;
+    line-height: 23px;
+    letter-spacing: 3.5px;
+    text-transform: uppercase;
+  }
+  &__item-others-data {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 11px;
+    color: $white;
+    font-size: 9px;
+    line-height: 18.5px;
+    text-transform: uppercase;
+  }
+  &__name-text {
+    letter-spacing: 1px;
+  }
+  &__date {
+    display: flex;
+    justify-content: center;
+    margin-right: 20px;
+    text-align: right;
+    letter-spacing: 2px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .card-front {
+    background-image: url('../img/card_front.svg');
+    width: 447px;
+    height: 245px;
+    top: 19%;
+    left: 164px;
+    transform: translateX(0%);
+    padding-top: 28px;
+    padding-left: 32px;
+    box-shadow: 30px 0px 40px -25px $grey;
+    &__circle-big {
+      width: 47px;
+      height: 47px;
+    }
+    &__circle-small {
+      margin-left: 15px;
+      width: 21px;
+      height: 21px;
+    }
+    &__item-card-number {
+      margin-top: 64px;
+      font-size: 28px;
+      line-height: 36px;
+      letter-spacing: 5.5px;
+    }
+    &__item-others-data {
+      margin-top: 25px;
+      font-size: 14px;
+    }
+    &__name-text {
+      letter-spacing: 2px;
+    }
+    &__date {
+      margin-right: 27px;
+    }
+  }
+}
+
+// section card-form (form)
+
+@media screen and (min-width: 1440px) {
+  .card-form {
+    width: calc(100vw - 483px);
+    height: 100vh;
+    min-height: 900px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+.card-form__wrapper {
+  padding-top: 91px;
+}
+.label {
+  display: block;
+  margin-top: 20px;
+  margin-bottom: 9px;
+  color: $violet;
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+.input {
+  display: block;
+  height: 45px;
+  padding-left: 16px;
+  font-size: 18px;
+  line-height: 23px;
+  color: $violet;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 8px;
+  border-color: $grey;
+  outline-style: none;
+  text-transform: uppercase;
+  &::placeholder {
+    color: $grey;
+    opacity: 0.5;
+    text-transform: capitalize;
+  }
+  &:hover, &:focus{
+    border-color: transparent;
+    background: $gradient;
+    box-shadow: inset 0px 0px 0px 100vw $white;
+  }
+  &:invalid{
+    border-color: red;
+  }
+}
+.width-327-381 {
+  width: 327px;
+}
+.width-72-80 {
+  width: 72px;
+}
+.width-164-191 {
+  width: 164px;
+}
+.others {
+  display: flex;
+  &__year {
+    margin-left: 8px;
+  }
+  &__cvc {
+    margin-left: 11px;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .card-form__wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 0;
+    .label {
+      margin-top: 26px;
+      margin-bottom: 9px;
+    }
+    .width-327-381 {
+      width: 381px;
+    }
+    .width-72-80 {
+      width: 80px;
+    }
+    .width-164-191 {
+      width: 191px;
+    }
+    .others__year {
+      margin-left: 10px;
+    }
+    .others__cvc {
+      margin-left: 20px;
+    }
+  }
+}
+// section card-form (success)
+.success {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  &-img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: $gradient;
+    display: flex;
+    justify-content: center;
+  }
+  &-message {
+    margin-top: 35px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  &__gratitude {
+    color: $violet;
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+  &__details {
+    margin-top: 16px;
+    color: $grey;
+    font-size: 18px;
+    line-height: 23px;
+    letter-spacing: 1.1px;
+  }
+  &-btn {
+    margin-top: 21px;
+  }
+}
+.btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 53px;
+  margin-top: 27px;
+  padding: 0;
+  border-radius: 8px;
+  background-color: $violet;
+  border-width: 0;
+  color: $white;
+  font-size: 18px;
+  line-height: 23px;
+  letter-spacing: 1px;
+  outline-style: none;
+  a {
+    color: $white;
+    text-decoration: none;
+  }
+  &:hover, &:focus {
+    border-color: transparent;
+    background: $gradient;
+  }
+}
+@media screen and (min-width: 1440px) {
+  .btn {
+    margin-top: 40px;
+  }
+}
+.error-inner {
+  font-size: 12px;
+  line-height: 15px;
+  letter-spacing: 0.5px;
+  color: red;
+}
+@media screen and (min-width: 1440px) {
+  .error-inner {
+    font-size: 14px;
+  }
+}
+.error-active {
+  border-color: red;
+}
+.active {
+  display: flex;
+}
+.inactive {
+  display: none;
+}
